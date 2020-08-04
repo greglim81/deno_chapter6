@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <form class="form-inline" action='/add-todo' method="POST">
+            <input type="text" class="form-control mb-2 mr-sm-2" name="new-todo">      
+            <button type="submit" class="btn btn-primary mb-2">
+                Add Todo
+            </button>
+        </form>
+        <% if (error) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+        <% } %>               
+        <ul class="list-group" >
+            <% for (let i = 0; i < todos.length;i++){ %>
+            <a href="/todo/<%= todos[i].id %>">
+               <li class="list-group-item 
+        d-flex justify-content-between align-items-center">
+        <%= todos[i].name %>                
+                    <form action='/delete-todo/<%= todos[i].id %>' method="POST">
+                        <button type="submit" class="btn btn-primary mb-2">
+        Delete
+           </button>
+                    </form>       
+                </li>
+            </a>                  
+            <% } %>
+        </ul>
+        
+    
+    </body>        
+</html>
