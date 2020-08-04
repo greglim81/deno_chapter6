@@ -22,19 +22,16 @@
         <ul class="list-group" >
             <% for (let i = 0; i < todos.length;i++){ %>
             <a href="/todo/<%= todos[i].id %>">
-               <li class="list-group-item 
-        d-flex justify-content-between align-items-center">
-        <%= todos[i].name %>                
-                    <form action='/delete-todo/<%= todos[i].id %>' method="POST">
-                        <button type="submit" class="btn btn-primary mb-2">
-        Delete
-           </button>
-                    </form>       
-                </li>
+               <li class="list-group-item d-flex justify-content-between align-items-center">
+                <%= todos[i].name %>                
+                <form action='/delete-todo/<%= todos[i].id %>' method="POST">
+                    <button type="submit" class="btn btn-primary mb-2">
+                        Delete
+                   </button>
+                </form>       
+               </li>
             </a>                  
             <% } %>
         </ul>
-        
-    
     </body>        
 </html>
