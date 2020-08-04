@@ -70,9 +70,9 @@ router.post('/add-todo',async (ctx,next) => {
             
     if(newTodoTitle && newTodoTitle.trim().length !== 0){
         const newTodo ={
-id: new Date().toISOString(), 
-name: newTodoTitle! 
-  }; 
+            id: new Date().toISOString(), 
+            name: newTodoTitle! 
+        }; 
         todos.push(newTodo); 
         console.log(newTodo);             
         ctx.response.redirect('/')
