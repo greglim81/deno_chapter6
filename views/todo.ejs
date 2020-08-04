@@ -10,10 +10,10 @@
     <h1><%= todoText %></h1>
     <form class="form-inline" action='/update-todo/<%= todoId %>' method="POST">
         <input type="text" 
-class="form-control mb-2 mr-sm-2" 
-name="update-todo" 
-value="<%= todoText %>"
-  >      
+            class="form-control mb-2 mr-sm-2" 
+            name="update-todo" 
+            value="<%= todoText %>"
+        >      
         <button type="submit" class="btn btn-primary mb-2">Update Todo</button>
     </form>
     <% if (error) { %>
